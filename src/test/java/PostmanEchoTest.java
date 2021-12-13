@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 public class PostmanEchoTest {
@@ -19,7 +20,7 @@ public class PostmanEchoTest {
                 // Проверки
                 .then()
                     .statusCode(200)
-                    .body("data", equalTo("some data"))
+                .body("data", equalTo("some data"))
         ;
     }
 }
